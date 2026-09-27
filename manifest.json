@@ -1,0 +1,36 @@
+{
+  "name": "Bodyweight Lab — Dopo la Palestra",
+  "short_name": "Bodyweight Lab",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#08090b",
+  "theme_color": "#08090b",
+  "lang": "it-IT",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Martedì · Full Body 1",
+      "short_name": "Martedì",
+      "url": "./?day=tue"
+    },
+    {
+      "name": "Giovedì · Full Body 2",
+      "short_name": "Giovedì",
+      "url": "./?day=thu"
+    },
+    {
+      "name": "Sabato · Full Body 3",
+      "short_name": "Sabato",
+      "url": "./?day=sat"
+    }
+  ]
+}
