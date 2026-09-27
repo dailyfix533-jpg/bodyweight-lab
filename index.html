@@ -18,63 +18,72 @@
 .toast{position:fixed;top:12px;left:50%;transform:translate(-50%,-150%);z-index:80;background:#171b21;border:1px solid var(--line);padding:10px 13px;border-radius:12px;font-size:11px;font-weight:900;transition:.3s var(--ease)}.toast.on{transform:translate(-50%,0)}
 .install{display:none;align-items:center;gap:9px;margin-top:10px;padding:9px 11px;border-radius:15px}.install.on{display:flex}.install span{flex:1;color:#c1c7d0;font-size:10px}.install b{display:block;color:#fff;font-size:11px}
 @media(max-width:650px){
-.hero{position:relative;top:auto;margin-bottom:12px;padding:14px;border-radius:20px}
-.hero .sub{font-size:11px;line-height:1.42;max-width:none}
-h1{font-size:24px;line-height:1.08;letter-spacing:-.03em}
-.eyebrow{font-size:9px}
-.tabs{gap:6px;margin-top:12px}
-.tab{min-width:0;padding:10px 8px;border-radius:13px;font-size:12px;line-height:1.15}
-.tab small{display:block;font-size:8px;margin-top:3px;line-height:1.2}
-.session{grid-template-columns:48px 1fr;gap:9px;padding:9px 10px;border-radius:15px}
-.ring{width:48px;height:48px}
-.time{font-size:21px}
-.session .controls{grid-column:1/-1;display:grid;grid-template-columns:1fr 48px;gap:7px}
-.session .btn{width:100%;min-height:42px}
-.day{margin:12px 0 9px;padding:14px;border-radius:18px}
-.day h2{font-size:21px;line-height:1.1}
-.day p{font-size:11px;line-height:1.42}
-.stats{margin-top:9px;gap:5px}
-.stat{padding:6px 8px;font-size:9px}
-.ex{padding:13px;border-radius:18px}
-.head{grid-template-columns:36px minmax(0,1fr)}
-.num{width:36px;height:36px;border-radius:11px}
-.name{font-size:16px;line-height:1.25;overflow-wrap:normal;word-break:normal}
-.equip{font-size:9px;line-height:1.25;white-space:normal}
-.status{grid-column:2;justify-self:start;font-size:8px;padding:6px 7px}
-.body{grid-template-columns:1fr;gap:9px;margin-top:10px}
-.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-.pill{min-width:0;text-align:center;padding:7px 4px;font-size:8px;line-height:1.15;white-space:normal}
-.pill b{display:block;font-size:12px;line-height:1.05;margin-bottom:2px}
-.rest{flex-direction:column;align-items:stretch;gap:8px;padding:9px}
-.rest>div:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
-.restt{font-size:18px}
-.rest .actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 44px;gap:5px;width:100%;margin:0}
-.rest .actions .btn,.rest .actions .video,.rest .actions .more{min-height:42px;height:42px}
-.rest .actions .btn{padding:8px 9px}
-.video{padding:9px 8px;justify-content:center;white-space:nowrap;font-size:10px}
-.more{padding:8px 0}
-.sets{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
-.set{min-height:60px;padding:8px}
+html,body{height:100%;overflow:hidden}
+body{overscroll-behavior:none}
+.app{height:100svh;max-width:none;margin:0;padding:8px 9px 0;display:flex;flex-direction:column;overflow:hidden}
+.hero{position:relative;top:auto;flex:0 0 auto;margin:0 0 8px;padding:12px;border-radius:19px}
+.hero .sub{display:none}
+.eyebrow{font-size:8px;letter-spacing:.12em}
+h1{font-size:21px;line-height:1.06;margin:4px 0 9px}
+.tabs{gap:5px;margin-top:0}
+.tab{min-width:0;padding:9px 6px;border-radius:12px;text-align:center;font-size:11px;line-height:1.05;white-space:normal}
+.tab small{display:block;margin-top:5px;font-size:8px;line-height:1;font-weight:800;color:#7f8793}
+.tab.active small{color:#c8c1ff}
+.session{margin-top:7px;grid-template-columns:45px minmax(0,1fr) auto;gap:8px;padding:8px 9px;border-radius:14px}
+.ring{width:45px;height:45px}
+.ring span{font-size:9px}
+.time{font-size:19px;line-height:1.05}
+.label{font-size:8px;letter-spacing:.08em}
+.session .controls{grid-column:auto;display:flex;gap:5px}
+.session .btn{min-height:38px;width:auto;flex:initial;padding:8px 10px}
+.session .btn.primary{min-width:88px}
+.scroll-area{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:0 1px calc(128px + env(safe-area-inset-bottom));scrollbar-width:none}
+.scroll-area::-webkit-scrollbar{display:none}
+.day{margin:8px 0 8px;padding:12px;border-radius:16px}
+.day h2{font-size:19px;line-height:1.05;margin:2px 0 3px}
+.day p{font-size:10px;line-height:1.35}
+.stats{gap:4px;margin-top:8px}
+.stat{padding:6px 7px;font-size:8px}
+.ex{padding:12px;border-radius:16px}
+.head{grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:9px}
+.num{width:34px;height:34px;border-radius:10px;font-size:11px}
+.name{font-size:15px;line-height:1.22;overflow-wrap:break-word}
+.equip{font-size:9px;line-height:1.2}
+.status{grid-column:auto;justify-self:end;font-size:7px;padding:5px 6px;white-space:nowrap}
+.body{grid-template-columns:1fr;gap:8px;margin-top:9px}
+.pills{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.pill{padding:6px 3px;font-size:8px;line-height:1.05;white-space:normal}
+.pill b{font-size:11px;line-height:1}
+.rest{padding:8px;gap:7px}
+.rest>div:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:7px}
+.restt{font-size:17px}
+.rest .actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 40px;gap:4px;width:100%;margin:0}
+.rest .actions .btn,.rest .actions .video,.rest .actions .more{min-height:40px;height:40px}
+.video{justify-content:center;padding:8px 6px;font-size:9px;white-space:nowrap}
+.more{padding:7px 0}
+.sets{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.set{min-height:56px;padding:8px}
 .settop{font-size:8px}
 .setv{font-size:11px}
 .ex.open .instructions{max-height:220px}
-.ibox{font-size:10.5px;line-height:1.5;padding:9px}
-.section{margin-top:10px;padding:13px;border-radius:18px}
-.section h3{font-size:14px;margin-bottom:8px}
-table{font-size:10px}
-th,td{padding:7px 3px}
-textarea{min-height:82px;font-size:12px}
-.sheet{bottom:calc(10px + env(safe-area-inset-bottom));width:min(700px,calc(100% - 16px));padding:10px;border-radius:17px}
-.sheet .big{font-size:27px}
-.app{padding:12px 9px calc(132px + env(safe-area-inset-bottom))}
+.ibox{font-size:10px;line-height:1.45;padding:9px}
+.section{margin-top:9px;padding:12px;border-radius:16px}
+.section h3{font-size:13px;margin-bottom:7px}
+table{font-size:9px}
+th,td{padding:6px 2px}
+textarea{min-height:78px;font-size:11px}
+.sheet{bottom:calc(8px + env(safe-area-inset-bottom));width:calc(100% - 14px);padding:9px;border-radius:16px}
+.sheet .big{font-size:26px}
 }
-@media(max-width:370px){
-.tabs{grid-template-columns:1fr 1fr 1fr}
-.tab{font-size:11px;padding:9px 6px}
-.tab small{font-size:7px}
-.pill{font-size:7.5px}
-.pill b{font-size:11px}
-.video{font-size:9px}
+@media(max-width:380px){
+.app{padding-left:7px;padding-right:7px}
+.hero{padding:11px}
+h1{font-size:20px}
+.tab{font-size:10px;padding:8px 4px}
+.tab small{font-size:7px;margin-top:4px}
+.session{grid-template-columns:42px minmax(0,1fr) auto;gap:6px}
+.ring{width:42px;height:42px}
+.session .btn.primary{min-width:76px;padding:8px}
 }
 </style></head>
 <body><div class="app">
@@ -83,7 +92,7 @@ textarea{min-height:82px;font-size:12px}
 <div class="session"><div class="ring" id="ring" style="--p:0%"><span>0%</span></div><div><div class="label">Sessione</div><div class="time" id="clock">00:00</div><div class="label" id="state">Pronto</div></div><div class="controls"><button class="btn primary" id="play" onclick="session()">▶ Avvia</button><button class="btn" onclick="resetSession()">↺</button></div></div>
 <div class="install glass" id="install"><span><b>Installa Bodyweight Lab</b>Portala sulla schermata Home.</span><button class="btn primary" id="installBtn">Installa</button><button class="btn" id="installClose">✕</button></div>
 </header>
-<main id="main"></main>
+<div class="scroll-area"><main id="main"></main>
 <section class="section glass"><h3>Progresso del giorno</h3><div class="bar"><span id="pbar"></span></div><div class="progt"><span>Serie completate</span><b id="pct">0%</b></div></section>
 <section class="section glass"><h3>Progressione trazioni</h3><table><tr><th>Settimana</th><th>Esempio</th><th>Focus</th></tr><tr><td>1</td><td>2–2–2–2</td><td>partenza facile</td></tr><tr><td>2</td><td>3–2–2–2</td><td>+1 rep totale</td></tr><tr><td>3</td><td>3–3–2–2</td><td>tecnica pulita</td></tr><tr><td>4</td><td>3–3–3–2</td><td>progressione</td></tr></table></section>
 <section class="section glass"><h3>Note</h3><textarea id="notes" placeholder="Come sono andate trazioni, push-up, recupero..."></textarea><div class="actions"><button class="btn primary" onclick="saveNotes()">💾 Salva</button><button class="btn" onclick="clearAll()">Azzera spunte</button></div></section>
